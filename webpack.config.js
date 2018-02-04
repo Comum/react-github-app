@@ -1,5 +1,8 @@
 var path = require('path');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('styles.css');
+
 module.exports = {
     entry: path.resolve('./src/index.js'),
     output: {
@@ -17,10 +20,29 @@ module.exports = {
                     presets: ['react', 'es2015'],
                     plugins: ['transform-class-properties']
                 }
-            }
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: () => [autoprefixer]
+                        }
+                    }, 'resolve-url-loader', 'sass-loader']
+                })
+            },
         ]
     },
     devServer: {
         contentBase: path.resolve('./dist')
-    }
+    },
+    plugins: [
+        extractCSS
+    ]
 };

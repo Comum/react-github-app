@@ -3,7 +3,7 @@ REACT REDUX EXAMPLE
 
 ## Description
 
-Simple one file project with redux flow
+Simple file to use github api
 
 ## Install
 

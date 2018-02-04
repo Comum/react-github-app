@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
+import Header from './components/header.js';
+
 const render = () => {
     ReactDOM.render((
-        <div>React Works!</div>
+        <Header />
     ), document.getElementById('root'));
 }
-
 render();
