@@ -6,10 +6,14 @@ import { Provider } from 'react-redux';
 import './scss/_import.scss';
 
 import Header from './components/header.js';
+import Form from './components/form.js';
 
 const render = () => {
     ReactDOM.render((
-        <Header />
+        <div>
+            <Header />
+            <Form />
+        </div>
     ), document.getElementById('root'));
 }
 render();
