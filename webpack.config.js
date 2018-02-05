@@ -2,6 +2,7 @@ var path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('styles.css');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: path.resolve('./src/index.js'),
