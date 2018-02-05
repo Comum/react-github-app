@@ -3,7 +3,10 @@ import React from 'react';
 class Header extends React.Component {
     render() {
         return (
-            <h2>React Git App</h2>
+            <div className="headerContainer">
+                <div className="headerImage"></div>
+                <div className="headerText">React Git App</div>
+            </div>
         );
     }
 }
