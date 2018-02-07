@@ -1,5 +1,6 @@
 var path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('styles.css');
 const autoprefixer = require('autoprefixer');
@@ -44,6 +45,10 @@ module.exports = {
         contentBase: path.resolve('./dist')
     },
     plugins: [
-        extractCSS
+        extractCSS,
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body'
+        })
     ]
 };
