@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('styles.css');
 const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.resolve('./src/index.js'),
@@ -49,6 +50,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body'
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: 'src/assets',
+            to: path.resolve(__dirname, 'dist/assets')
+        }])
     ]
 };
