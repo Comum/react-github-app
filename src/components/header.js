@@ -5,7 +5,7 @@ class Header extends React.Component {
         return (
             <div className="headerContainer">
                 <div className="headerImage">
-                    <img src="./assets/react.png" alt="react" class="headerImgElement"/>
+                    <img src="./assets/react.png" alt="react" className="headerImgElement"/>
                 </div>
                 <div className="headerText">React Git App</div>
             </div>
