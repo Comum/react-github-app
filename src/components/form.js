@@ -1,10 +1,15 @@
 import React from 'react';
 
 class Form extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log(this.refs.userName.value);
+        this.props.onSubmitUserForm(this.refs.userName.value);
     }
 
     render() {
