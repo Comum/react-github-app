@@ -24,9 +24,6 @@ class Form extends React.Component {
                         <input type="submit" valid="Search"/>
                     </div>
                 </form>
-                <div className="resultWrapper">
-                    
-                </div>
             </div>
         );
     }

@@ -3,6 +3,7 @@ import gitHub from '../actions/gitHubActions';
 
 const initialState = {
     gitHubUserRequested: false,
+    gitHubUserReceived: false,
     gitHubUser: {}
 }
 
@@ -16,6 +17,7 @@ function reduceGitHubUserRquested(state) {
 function reduceGitHubUserReceived(state, data) {
     return {
         gitHubUserRequested: false,
+        gitHubUserReceived: true,
         gitHubUser: data
     }
 }

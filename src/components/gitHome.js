@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './header.js';
 import Form from './form.js';
+import Result from './result.js';
 
 class GitHome extends React.Component {
     constructor(props) {
@@ -10,12 +11,11 @@ class GitHome extends React.Component {
     }
 
     render() {
-        console.log(this.props);
-
         return (
             <div>
                 <Header />
                 <Form {...this.props} />
+                <Result {...this.props} />
             </div>
         );
     }
